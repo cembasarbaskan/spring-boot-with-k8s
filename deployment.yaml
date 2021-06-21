@@ -1,0 +1,33 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: test
+spec:
+  selector:
+    app: test
+  ports:
+    - protocol: TCP
+      port: 8080
+      nodePort: 30086
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test
+spec:
+  selector:
+    matchLabels:
+      app: test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: test
+          image: coderba/test:v0.0.1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
