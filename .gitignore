@@ -27,3 +27,6 @@ hs_err_pid*
 /.idea/*
 /mvnw
 /mvnw.cmd
+.DS_Store
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/MavenWrapperDownloader.java
