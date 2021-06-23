@@ -30,3 +30,7 @@ hs_err_pid*
 .DS_Store
 .mvn/wrapper/maven-wrapper.properties
 .mvn/wrapper/MavenWrapperDownloader.java
+.classpath
+.factorypath
+*.prefs
+.project
