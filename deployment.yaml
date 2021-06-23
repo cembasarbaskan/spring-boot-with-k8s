@@ -1,33 +1,32 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: test
+  name: demo
 spec:
   selector:
-    app: test
+    app: demo
   ports:
-    - protocol: TCP
-      port: 8080
-      nodePort: 30086
-  type: NodePort
+    - port: 8080
+      targetPort: 8080
+  type: LoadBalancer
 ---
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
-  name: test
+  name: demo
 spec:
   selector:
     matchLabels:
-      app: test
+      app: demo
   replicas: 1
   template:
     metadata:
       labels:
-        app: test
+        app: demo
     spec:
       containers:
-        - name: test
-          image: coderba/test:v0.0.1
-          imagePullPolicy: Never
+        - name: demo
+          image: coderba/demo:v0.0.1
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

@@ -1,9 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.ConfigurationReader;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class SchedulerService {
     private final ConfigurationReader configurationReader;
@@ -12,9 +14,8 @@ public class SchedulerService {
         this.configurationReader = configurationReader;
     }
 
-    @Scheduled(fixedDelay = 1500)
+    @Scheduled(fixedDelay = 1000)
     public void schedule() {
-        System.out.println("Config message: " + configurationReader.getMessage());
-        System.out.println("Feature flag: " + configurationReader.getFeatureEnabled());
+        log.info("Config message: " + configurationReader.getMessage());
     }
 }

@@ -4,8 +4,7 @@ spring:
 
 app:
   config:
-    message: TY Tech 2019
-    feature-enabled: false
+    message: adesso
 
 management:
   endpoint:

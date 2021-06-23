@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConfigurationReader {
     private String message;
-    private Boolean featureEnabled;
 
     public String getMessage() {
         return message;
@@ -17,11 +16,4 @@ public class ConfigurationReader {
         this.message = message;
     }
 
-    public Boolean getFeatureEnabled() {
-        return featureEnabled;
-    }
-
-    public void setFeatureEnabled(Boolean featureEnabled) {
-        this.featureEnabled = featureEnabled;
-    }
 }

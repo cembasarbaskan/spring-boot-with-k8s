@@ -2,7 +2,7 @@ spring:
   cloud:
     kubernetes:
       config:
-        name: cloud-cm
+        name: config-map
         enabled: true
       reload:
         enabled: true
